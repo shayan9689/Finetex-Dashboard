@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  /* Fintex Brand Colors */
+  --color-primary: #1F76AF;
+  --color-primary-dark: #1F4AAF;
+  --color-primary-light: #7DD3FC;
+  --color-secondary: #F97316;
+  --color-accent: #FFD166;
+  
+  /* Semantic Colors */
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+}
+
+:root {
+  --background: #F8F9FA;
+  --foreground: #111827;
+  --surface: #FFFFFF;
+  --surface-hover: #F1F5F9;
+  --border: #E2E8F0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0F172A;
+    --foreground: #F8FAFC;
+    --surface: #1E293B;
+    --surface-hover: #334155;
+    --border: #334155;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
