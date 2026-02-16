@@ -218,8 +218,8 @@ export default function ManageUsersPage() {
                 </div>
             </div>
 
-            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden">
-                <div className="overflow-x-auto">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-x-hidden overflow-y-visible">
+                <div className="overflow-x-auto overflow-y-visible">
                     <table className="w-full text-left text-sm">
                         <thead className="bg-slate-50 dark:bg-slate-700/50 text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold border-b border-slate-100 dark:border-slate-700">
                             <tr>
@@ -263,7 +263,7 @@ export default function ManageUsersPage() {
                                                     <MoreHorizontal size={20} />
                                                 </button>
                                                 {openMenuId === user.id && (
-                                                    <div className="absolute right-0 top-full mt-1 w-48 py-1 bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-slate-200 dark:border-slate-600 z-20 max-w-[calc(100vw-2rem)]">
+                                                    <div className="absolute right-0 bottom-full mb-1 w-48 py-1 bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-slate-200 dark:border-slate-600 z-[100] max-w-[calc(100vw-2rem)]">
                                                         {user.status === 'Revoked' ? (
                                                             <button
                                                                 onClick={() => handleRestoreAccess(user)}

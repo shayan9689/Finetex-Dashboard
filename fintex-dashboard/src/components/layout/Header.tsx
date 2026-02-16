@@ -50,7 +50,7 @@ export function Header({ onMenuClick }: { onMenuClick?: () => void }) {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-700/60 sticky top-0 z-30 px-3 sm:px-6 py-3 sm:py-4 overflow-x-hidden"
+            className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-700/60 sticky top-0 z-30 px-3 sm:px-6 py-3 sm:py-4 overflow-visible"
         >
             <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 min-w-0">
                 {/* Left: Breadcrumbs & Mobile Menu */}
@@ -116,10 +116,10 @@ export function Header({ onMenuClick }: { onMenuClick?: () => void }) {
                                         animate={{ opacity: 1, scale: 1 }}
                                         exit={{ opacity: 0, scale: 0.5 }}
                                         transition={{ duration: 0.2 }}
-                                        className="absolute -bottom-5 flex items-center justify-center"
+                                        className="absolute inset-0 flex items-center justify-center pointer-events-none"
                                     >
-                                        <div className="p-1 bg-green-500 rounded-full">
-                                            <Check size={14} className="text-white" strokeWidth={3} />
+                                        <div className="p-1 bg-green-500 rounded-full shadow-md">
+                                            <Check size={12} className="text-white" strokeWidth={3} />
                                         </div>
                                     </motion.div>
                                 )}
@@ -191,7 +191,7 @@ export function Header({ onMenuClick }: { onMenuClick?: () => void }) {
                                         animate={{ opacity: 1, y: 0, scale: 1 }}
                                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                                         transition={{ duration: 0.2 }}
-                                        className="fixed sm:absolute left-3 right-3 sm:left-auto sm:right-0 top-[4.5rem] sm:top-full sm:mt-2 w-[calc(100vw-1.5rem)] sm:w-56 max-w-56 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden py-1 z-50 origin-top-right"
+                                        className="fixed left-3 right-3 sm:left-auto sm:right-4 top-[4.5rem] w-[calc(100vw-1.5rem)] sm:w-56 max-w-56 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden py-1 z-[100] origin-top-right"
                                     >
                                         <div className="px-4 py-3 border-b border-slate-50 dark:border-slate-700">
                                             <p className="text-sm font-medium text-slate-900 dark:text-slate-100">Signed in as</p>
