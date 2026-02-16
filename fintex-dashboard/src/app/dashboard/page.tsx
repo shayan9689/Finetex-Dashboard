@@ -7,11 +7,8 @@ import { motion } from 'framer-motion';
 
 const staggerItem = {
     initial: { opacity: 0, y: 12 },
-    animate: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] },
-    },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.35, ease: "easeOut" as const },
 };
 
 export default function DashboardPage() {
@@ -58,7 +55,7 @@ export default function DashboardPage() {
         <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
             className="space-y-8"
         >
             {/* Header */}

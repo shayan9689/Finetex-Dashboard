@@ -105,9 +105,12 @@ Finetex-Dashboard/
 
 ---
 
-## Deployment
+## Deployment (Vercel)
 
-Deploy to [Vercel](https://vercel.com) or any Node.js hosting platform. The project is configured for zero-config deployment on Vercel.
+1. Import the repo at [vercel.com/new](https://vercel.com/new)
+2. **Set Root Directory** to `fintex-dashboard` (required — the Next.js app is in this subfolder)
+3. Leave framework preset as Next.js (auto-detected)
+4. Deploy
 
 ---
 
