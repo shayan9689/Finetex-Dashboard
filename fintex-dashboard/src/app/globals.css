@@ -1,15 +1,19 @@
 @import "tailwindcss";
 
+/* Class-based dark mode (user preference via Settings) */
+@custom-variant dark (&:is(.dark *));
+
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-white: var(--surface);
   
-  /* Fintex Brand Colors */
-  --color-primary: #1F76AF;
-  --color-primary-dark: #1F4AAF;
-  --color-primary-light: #7DD3FC;
-  --color-secondary: #F97316;
-  --color-accent: #FFD166;
+  /* Theme: Emerald/Teal - Industry Standard */
+  --color-primary: #059669;
+  --color-primary-dark: #047857;
+  --color-primary-light: #34d399;
+  --color-secondary: #0d9488;
+  --color-accent: #5eead4;
   
   /* Semantic Colors */
   --color-surface: var(--surface);
@@ -17,26 +21,104 @@
   --color-border: var(--border);
 }
 
+/* Light mode - soft off-white/grey to reduce eye strain (no pure white) */
 :root {
-  --background: #F8F9FA;
-  --foreground: #111827;
-  --surface: #FFFFFF;
-  --surface-hover: #F1F5F9;
+  --background: #F4F5F6;
+  --foreground: #1e293b;
+  --surface: #F8F9FA;
+  --surface-hover: #EEF1F3;
   --border: #E2E8F0;
+  /* Softer slate for light backgrounds */
+  --color-slate-50: #F2F4F6;
+  --color-slate-100: #E8ECF0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0F172A;
-    --foreground: #F8FAFC;
-    --surface: #1E293B;
-    --surface-hover: #334155;
-    --border: #334155;
-  }
+/* Softer dark mode - warmer, lower contrast for comfort */
+.dark {
+  --background: #1a1b1e;
+  --foreground: #e8e8ed;
+  --surface: #242528;
+  --surface-hover: #2e3035;
+  --border: #3a3c42;
+  /* Override Tailwind slate palette for softer contrast */
+  --color-slate-900: #1a1b1e;
+  --color-slate-800: #242528;
+  --color-slate-700: #2e3035;
+  --color-slate-600: #3a3c42;
+  --color-slate-500: #6b6d74;
+  --color-slate-400: #8e9098;
+  --color-slate-300: #b4b6be;
+  --color-slate-200: #d8d9e0;
+  --color-slate-100: #e8e8ed;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior-y: auto;
+}
+
+/* Stretchy/rubber-band scroll - allow overscroll bounce with limit */
+body {
+  overscroll-behavior-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Pointer cursor on hover for inputs, textareas, buttons, links - entire website */
+input:hover,
+textarea:hover,
+button:hover,
+a:hover,
+[role="button"]:hover,
+[type="button"]:hover,
+[type="submit"]:hover {
+  cursor: pointer;
+}
+
+/* Smooth animated gradient for Fintex branding - slow one-direction flow */
+@keyframes fintex-gradient-flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.fintex-gradient-animate {
+  background: linear-gradient(
+    90deg,
+    #1e293b,
+    #64748b,
+    #c0c5ce,
+    #e2e8f0,
+    #c0c5ce,
+    #64748b,
+    #1e293b
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fintex-gradient-flow 8s linear infinite;
+}
+
+.fintex-gradient-animate-dark {
+  background: linear-gradient(
+    90deg,
+    #0f172a,
+    #475569,
+    #94a3b8,
+    #e2e8f0,
+    #94a3b8,
+    #475569,
+    #0f172a
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fintex-gradient-flow 8s linear infinite;
 }
