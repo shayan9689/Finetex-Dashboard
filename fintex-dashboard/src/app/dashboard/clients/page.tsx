@@ -185,7 +185,7 @@ export default function ClientsPage() {
                                 animate={{ opacity: 1, y: 0, scale: 1 }}
                                 exit={{ opacity: 0, y: -8, scale: 0.96 }}
                                 transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-                                className="absolute right-0 mt-2 py-2 w-44 bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 z-20"
+                                className="absolute right-0 mt-2 py-2 w-44 min-w-[8rem] max-w-[calc(100vw-2rem)] bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 z-20"
                             >
                                 {STATUS_OPTIONS.map((status) => (
                                     <button
@@ -264,7 +264,7 @@ export default function ClientsPage() {
                                                     <MoreHorizontal size={20} />
                                                 </button>
                                                 {openMenuId === client.id && (
-                                                    <div className="absolute right-0 mt-1 w-48 py-1 bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-slate-200 dark:border-slate-600 z-20">
+                                                    <div className="absolute right-0 top-full mt-1 w-48 py-1 bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-slate-200 dark:border-slate-600 z-20 max-w-[calc(100vw-2rem)]">
                                                         <button
                                                             onClick={() => handleSuspendClient(client)}
                                                             className="flex items-center w-full px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700"

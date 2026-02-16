@@ -80,8 +80,8 @@ export default function DashboardPage() {
                         className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 block cursor-pointer hover:shadow-md hover:border-slate-200 dark:hover:border-slate-600 transition-all duration-300"
                     >
                         <div className="flex items-center justify-between mb-4">
-                            <div className={`p-3 rounded-xl ${stat.color} bg-opacity-10`}>
-                                <stat.icon size={24} className={`text-${stat.color.split('-')[1]}-600`} />
+                            <div className={`p-3 rounded-xl ${stat.color}`}>
+                                <stat.icon size={24} className="text-white" />
                             </div>
                             <span className={`text-sm font-medium ${stat.trend === 'up' ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'} bg-green-50 dark:bg-green-900/30 px-2 py-1 rounded-full`}>
                                 {stat.change}

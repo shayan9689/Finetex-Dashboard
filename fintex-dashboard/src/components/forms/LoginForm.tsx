@@ -4,9 +4,11 @@ import React, { useState } from 'react';
 import { Mail, Lock, Eye, EyeOff, Loader2, X, Send } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTheme } from '@/contexts/ThemeContext';
 
 export default function LoginForm() {
     const router = useRouter();
+    const { setTheme } = useTheme();
     const [isLoading, setIsLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const [password, setPassword] = useState('');
@@ -21,6 +23,7 @@ export default function LoginForm() {
 
         // Simulate network delay
         setTimeout(() => {
+            setTheme('light'); // Default to light mode on login
             setIsLoading(false);
             router.push('/dashboard');
         }, 1500);

@@ -50,13 +50,13 @@ export function Header({ onMenuClick }: { onMenuClick?: () => void }) {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-700/60 sticky top-0 z-30 px-4 sm:px-6 py-3 sm:py-4"
+            className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-700/60 sticky top-0 z-30 px-3 sm:px-6 py-3 sm:py-4 overflow-x-hidden"
         >
-            <div className="max-w-7xl mx-auto flex items-center justify-between">
+            <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 min-w-0">
                 {/* Left: Breadcrumbs & Mobile Menu */}
                 <div className="flex items-center gap-4">
                     <button
-                        onClick={onMenuClick}
+                        onClick={() => onMenuClick?.()}
                         className="md:hidden p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-400 transition-colors"
                     >
                         <Menu size={20} />
@@ -81,7 +81,7 @@ export function Header({ onMenuClick }: { onMenuClick?: () => void }) {
                 </div>
 
                 {/* Right: Search & Actions */}
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-2 sm:gap-4 md:gap-6 min-w-0 flex-shrink-0">
                     {/* Search Bar */}
                     <div className="hidden md:flex items-center relative group">
                         <Search size={16} className="absolute left-3 text-slate-400 group-focus-within:text-primary transition-colors pointer-events-none" />
@@ -131,7 +131,7 @@ export function Header({ onMenuClick }: { onMenuClick?: () => void }) {
                                         animate={{ opacity: 1, y: 0, scale: 1 }}
                                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                                         transition={{ duration: 0.2 }}
-                                        className="absolute right-0 top-full mt-2 w-80 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden py-1 z-50 origin-top-right"
+                                        className="fixed sm:absolute left-3 right-3 sm:left-auto sm:right-0 top-[4.5rem] sm:top-full sm:mt-2 w-[calc(100vw-1.5rem)] sm:w-80 max-w-80 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden py-1 z-50 origin-top-right"
                                     >
                                         <div className="px-4 py-3 border-b border-slate-50 dark:border-slate-700 flex justify-between items-center">
                                             <p className="text-sm font-bold text-slate-900 dark:text-slate-100">Notifications</p>
@@ -171,7 +171,7 @@ export function Header({ onMenuClick }: { onMenuClick?: () => void }) {
                         <div className="relative" ref={dropdownRef}>
                             <button
                                 onClick={() => setIsProfileOpen(!isProfileOpen)}
-                                className="flex items-center gap-3 pl-4 border-l border-slate-200 dark:border-slate-600 hover:opacity-80 transition-opacity cursor-pointer"
+                                className="flex items-center gap-2 sm:gap-3 pl-2 sm:pl-4 border-l border-slate-200 dark:border-slate-600 hover:opacity-80 transition-opacity cursor-pointer"
                                 suppressHydrationWarning
                             >
                                 <div className="text-right hidden md:block">
@@ -191,7 +191,7 @@ export function Header({ onMenuClick }: { onMenuClick?: () => void }) {
                                         animate={{ opacity: 1, y: 0, scale: 1 }}
                                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                                         transition={{ duration: 0.2 }}
-                                        className="absolute right-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden py-1 z-50 origin-top-right"
+                                        className="fixed sm:absolute left-3 right-3 sm:left-auto sm:right-0 top-[4.5rem] sm:top-full sm:mt-2 w-[calc(100vw-1.5rem)] sm:w-56 max-w-56 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden py-1 z-50 origin-top-right"
                                     >
                                         <div className="px-4 py-3 border-b border-slate-50 dark:border-slate-700">
                                             <p className="text-sm font-medium text-slate-900 dark:text-slate-100">Signed in as</p>
