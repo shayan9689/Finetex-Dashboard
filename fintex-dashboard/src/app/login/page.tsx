@@ -13,13 +13,13 @@ export default function LoginPage() {
             <div className="hidden lg:flex w-1/2 bg-gradient-to-br from-emerald-700 via-teal-700 to-cyan-800 relative overflow-hidden items-center justify-center p-8 xl:p-12">
                 {/* Abstract Shapes */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.5 }}
+                    initial={false}
                     animate={{ opacity: 0.4, scale: 1 }}
                     transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
                     className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-white blur-[100px]"
                 />
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.5 }}
+                    initial={false}
                     animate={{ opacity: 0.3, scale: 1 }}
                     transition={{ duration: 5, delay: 0.5, repeat: Infinity, repeatType: "reverse" }}
                     className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-teal-400 blur-[120px]"
@@ -27,7 +27,7 @@ export default function LoginPage() {
 
                 <div className="relative z-10 max-w-lg text-center text-white">
                     <motion.div
-                        initial={{ y: 20, opacity: 0 }}
+                        initial={false}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.2 }}
                         className="mb-8 flex items-center justify-center gap-5"
@@ -43,7 +43,7 @@ export default function LoginPage() {
                     </motion.div>
 
                     <motion.h2
-                        initial={{ y: 20, opacity: 0 }}
+                        initial={false}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.4 }}
                         className="text-4xl font-bold mb-6 leading-tight"
@@ -52,7 +52,7 @@ export default function LoginPage() {
                     </motion.h2>
 
                     <motion.p
-                        initial={{ y: 20, opacity: 0 }}
+                        initial={false}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.6 }}
                         className="text-lg text-emerald-100 leading-relaxed"
@@ -63,7 +63,7 @@ export default function LoginPage() {
 
                 {/* Glass Cards Decoration */}
                 <motion.div
-                    initial={{ x: 100, opacity: 0 }}
+                    initial={false}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.8, type: "spring" }}
                     className="absolute bottom-12 right-12 bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 w-64 shadow-xl"
@@ -93,7 +93,7 @@ export default function LoginPage() {
                 </button>
                 <div className="max-w-md w-full">
                     <motion.div
-                        initial={{ y: 20, opacity: 0 }}
+                        initial={false}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.5 }}
                     >
